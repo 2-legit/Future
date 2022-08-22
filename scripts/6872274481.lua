@@ -3427,7 +3427,7 @@ end
 do 
     local beds, luckyblocks = {Enabled = false}, {Enabled = false}
     local bedaura = {["Enabled"] = false}; bedaura = GuiLibrary.Objects.WorldWindow.API.CreateOptionsButton({
-        ["Name"] = "Fucker",
+        ["Name"] = "Nuker",
         ["Function"] = function(callback) 
             if callback then 
                 spawn(function() 
@@ -3475,39 +3475,21 @@ do
         Function = function(callback)
             if callback then 
                 spawn(function()
-                    repeat task.wait() until lowestY~=nil and lowestY~=9999999999999
-                    antivoidpart = Instance.new("Part", WORKSPACE)
-                    antivoidpart.Size = Vector3.new(999999, 2, 999999)
-                    antivoidpart.Position = Vector3.new(0, lowestY, 0)
-                    antivoidpart.Anchored = true
-                    antivoidpart.Transparency = 0.75
-                    antivoidpart.CanCollide = false
-                    connection = antivoidpart.Touched:connect(function(v) 
-                        if isAlive() and v:IsDescendantOf(lplr.Character) then 
-                            if ((lastValidPos or lplr.Character.HumanoidRootPart.CFrame).p - lplr.Character.HumanoidRootPart.Position).Magnitude <= 30 then 
-                                lplr.Character.HumanoidRootPart.CFrame = lastValidPos
-                            end
-                        end
-                    end)
-
-                    repeat task.wait(0.1) 
-                        if isAlive() then
-                            local params = RaycastParams.new()
-                            params.FilterDescendantsInstances = {game:GetService("CollectionService"):GetTagged("block")}
-                            params.FilterType = Enum.RaycastFilterType.Whitelist
-                            local ray = WORKSPACE:Raycast(lplr.Character.HumanoidRootPart.Position, Vector3.new(0, -5, 0), params)
-                            if ray and ray.Instance then 
-                                lastValidPos = CFrame.new(ray.Position)
-                            end
-                        end
-                    until not AntiVoid.Enabled
-                end)
-            else
-                spawn(function()
-                    repeat task.wait() until lowestY~=nil and lowestY~=9999999999999
-                    if antivoidpart then antivoidpart:Destroy(); antivoidpart=nil end
-                    if connection then connection:Disconnect(); connection=nil end
-                end)
+                      local antivoidpart = Instance.new("Part", Workspace)
+            antivoidpart.Name = "AntiVoid"
+            antivoidpart.Size = Vector3.new(2100, 0.5, 2000)
+            antivoidpart.Position = Vector3.new(160.5, 25, 247.5)
+            antivoidpart.Transparency = 0.4
+            antivoidpart.Anchored = true
+            antivoidpart.Touched:connect(function(dumbcocks)
+                if dumbcocks.Parent:WaitForChild("Humanoid") and dumbcocks.Parent.Name == lplr.Name then
+                    game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
+                    wait(0.2)
+                    game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
+                    wait(0.2)
+                    game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
+                end
+            end)
             end
         end,
     })
