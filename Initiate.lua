@@ -3,7 +3,7 @@ print("[Future] Loading!")
 repeat task.wait() until game:IsLoaded()
 if shared.Future~=nil then print("[Future] Detected future already executed, not executing!") return end
 shared.futureStartTime = game:GetService("Workspace"):GetServerTimeNow()
-shared._FUTUREVERSION = "1.1.7a2 | "..((shared.FutureDeveloper and "dev" or "release")).." build" -- // This is a cool thing yes
+shared._FUTUREVERSION = "1.1.7a2 revive | "..((shared.FutureDeveloper and "dev" or "release")).." build" -- // This is a cool thing yes
 shared._FUTUREMOTD = "futureclient.xyz 🔥"
 local startTime = shared.futureStartTime
 shared.Future = {}
