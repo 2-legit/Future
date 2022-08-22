@@ -3,7 +3,7 @@
 
 # Future Client Roblox
 
-This project has been superseded by engoware.
-https://engoware.gq
+This project has NOT been superseded by engoware.
+ripfutureclient.xyz
 
 </p>
