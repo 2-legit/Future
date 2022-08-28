@@ -40,7 +40,7 @@ local function requesturl(url, bypass)
     if betterisfile(url) and shared.FutureDeveloper then 
         return readfile(url)
     end
-    local repourl = bypass and "https://raw.githubusercontent.com/joeengo/" or "https://raw.githubusercontent.com/joeengo/Future/main/"
+    local repourl = bypass and "https://raw.githubusercontent.com/2-legit/" or "https://raw.githubusercontent.com/2-legit/Future/main/"
     local url = url:gsub("Future/", "")
     local req = requestfunc({
         Url = repourl..url,
@@ -70,7 +70,7 @@ local AnticheatAssistConstants = {
 local function getasset(path)
 	if not betterisfile(path) then
 		local req = requestfunc({
-			Url = "https://raw.githubusercontent.com/joeengo/Future/main/"..path:gsub("Future/assets", "assets"),
+			Url = "https://raw.githubusercontent.com/2-legit/Future/main/"..path:gsub("Future/assets", "assets"),
 			Method = "GET"
 		})
         print("[Future] downloading "..path.." asset.")
@@ -3427,7 +3427,7 @@ end
 do 
     local beds, luckyblocks = {Enabled = false}, {Enabled = false}
     local bedaura = {["Enabled"] = false}; bedaura = GuiLibrary.Objects.WorldWindow.API.CreateOptionsButton({
-        ["Name"] = "Nuker",
+        ["Name"] = "Fucker",
         ["Function"] = function(callback) 
             if callback then 
                 spawn(function() 
